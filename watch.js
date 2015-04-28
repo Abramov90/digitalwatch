@@ -30,16 +30,37 @@
 	};
 
 	var _initTimeCounter = function() {
-		_startHoursCounter();
+        _startHoursCounter();
+        _startMinutesCounter();
+        _startSecondsCounter();
 	};
 
 	var _startHoursCounter = function() {
 		var hours = [_digits[0], _digits[1]];
-		var timeHours = '' + (new Date).getHours();
+		var time = '' + (new Date).getHours();
+        if (time.length < 2) time = '0' + time;
 		$.each(hours, function(index, hour) {
-			$(hour).removeClass().addClass(_self.digits[+timeHours[index]]);
+			$(hour).removeClass().addClass(_self.digits[+time[index]]);
 		});
 	};
+
+    var _startMinutesCounter = function() {
+        var minutes = [_digits[3], _digits[4]];
+        var time = '' + (new Date).getMinutes();
+        if (time.length < 2) time = '0' + time;
+        $.each(minutes, function(index, minute) {
+            $(minute).removeClass().addClass(_self.digits[+time[index]]);
+        });
+    };
+
+    var _startSecondsCounter = function() {
+        var seconds = [_digits[6], _digits[7]];
+        var time = '' + (new Date).getSeconds();
+        if (time.length < 2) time = '0' + time;
+        $.each(seconds, function(index, second) {
+            $(second).removeClass().addClass(_self.digits[+time[index]]);
+        });
+    };
 
 	var _digits = null;
 
