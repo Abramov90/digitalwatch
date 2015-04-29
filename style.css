@@ -56,23 +56,10 @@ table {
 
 #clock{
 	width:370px;
-	padding:40px;
+	padding:15px;
 	margin:200px auto 60px;
 	position:relative;
 }
-
-#clock:after{
-	content:'';
-	position:absolute;
-	width:400px;
-	height:20px;
-	border-radius:100%;
-	left:50%;
-	margin-left:-200px;
-	bottom:2px;
-	z-index:-1;
-}
-
 
 #clock .display{
 	text-align:center;
@@ -93,9 +80,9 @@ table {
 	color:#272e38;
 }
 
-#clock.light:after{
-	box-shadow:0 4px 10px rgba(0,0,0,0.15);
-}
+/*#clock.light:after{*/
+	/*box-shadow:0 4px 10px rgba(0,0,0,0.15);*/
+/*}*/
 
 #clock.light .digits div span{
 	background-color:#272e38;
