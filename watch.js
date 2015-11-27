@@ -8,7 +8,7 @@
 	};
 
 	var _getClock = function() {
-		$.ajax({url:'clock.min.html'}).done(function(data) {
+		$.ajax({url:'clock.html'}).done(function(data) {
 			$('.watch-container').html(data);
 		});
 		_initClock();
